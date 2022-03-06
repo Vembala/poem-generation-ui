@@ -9,3 +9,5 @@ class EnterButton(pyside2.QtWidgets.QButton):
     def __init__(self, text_generator):
 
         """__init__"""
+
+        self.clicked.connect(text_generator.run)
