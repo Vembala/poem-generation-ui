@@ -8,7 +8,7 @@ from layout import VerticalBox
 from central_widget import CentralWidget
 from text_generator import TextGenerator
 from main_window import MainWindow
-import pyside2
+import PySide2 as pyside2
 import sys
 from custom_object import TokenAndPositionEmbedding
 

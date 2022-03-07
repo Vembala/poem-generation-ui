@@ -1,6 +1,6 @@
 """output_label"""
 
-import pyside2
+import PySide2 as pyside2
 
 class OutputLabel(pyside2.QtWidgets.QLabel):
 
