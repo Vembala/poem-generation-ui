@@ -10,6 +10,7 @@ from text_generator import TextGenerator
 from main_window import MainWindow
 import pyside2
 import sys
+from custom_object import TokenAndPositionEmbedding
 
 app = pyside2.QtWidgets.QApplication([])
 
@@ -19,11 +20,12 @@ LINES = 10
 MAXLEN = 80
 MAXTOKENS = 6
 MODEL_PATH = "model"
+CUSTOM_OBJECT = "TokenAndPositionEmbedding"
 
 with open(VOCAB_PATH, READ_BYTE_MODE) as file:
     vocab = pickle.load(file)
 
-model = tf.keras.models.load_model(MODEL_PATH)
+model = tf.keras.models.load_model(MODEL_PATH, custom_object={CUSTOM_OBJECT: TokenAndPositionEmbedding})
 
 output_label = OutputLabel()
 text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, MODEL_PATH)
