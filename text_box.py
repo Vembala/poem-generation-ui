@@ -10,4 +10,6 @@ class TextBox(QtWidgets.QTextEdit):
 
         """__init__"""
 
+        super().__init__()
+
         self.textChanged.connect(text_generator.run)

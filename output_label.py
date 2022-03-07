@@ -9,3 +9,5 @@ class OutputLabel(QtWidgets.QLabel):
     def __init__(self,):
 
         """__init__"""
+
+        super().__init__()
