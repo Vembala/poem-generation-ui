@@ -25,7 +25,7 @@ CUSTOM_OBJECT = "TokenAndPositionEmbedding"
 with open(VOCAB_PATH, READ_BYTE_MODE) as file:
     vocab = pickle.load(file)
 
-model = tf.keras.models.load_model(MODEL_PATH, custom_object={CUSTOM_OBJECT: TokenAndPositionEmbedding})
+model = tf.keras.models.load_model(MODEL_PATH, custom_objects={CUSTOM_OBJECT: TokenAndPositionEmbedding})
 
 output_label = OutputLabel()
 text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, MODEL_PATH)
