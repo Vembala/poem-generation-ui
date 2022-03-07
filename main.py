@@ -7,6 +7,11 @@ from output_label import OutputLabel
 from layout import VerticalBox
 from central_widget import CentralWidget
 from text_generator import TextGenerator
+from main_window import MainWindow
+import pyside2
+import sys
+
+app = pyside2.QtWidgets.QApplication([])
 
 VOCAB_PATH = "vocab.pkl"
 READ_BYTE_MODE = "rb"
@@ -25,3 +30,7 @@ text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, MO
 text_box = TextBox(text_generator)
 vertical_box = VerticalBox(text_box, output_label,)
 central_widget = CentralWidget(vertical_box,)
+main_window = MainWindow(central_widget)
+
+main_window.show()
+sys.exit(app.exec_())
