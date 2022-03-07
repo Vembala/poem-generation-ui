@@ -1,6 +1,6 @@
 """text_generator"""
 
-import pyside2
+import PySide2 as pyside2
 import numpy as np
 import tensorflow as tf
 

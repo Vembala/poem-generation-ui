@@ -1,6 +1,6 @@
 """main_window"""
 
-import pyside2
+import PySide2 as pyside2
 
 class MainWindow(pyside2.QtWidgets.QMainWindow):
 

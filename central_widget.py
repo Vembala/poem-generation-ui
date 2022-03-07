@@ -1,6 +1,6 @@
 """central_widget"""
 
-import pyside2
+import PySide2 as pyside2
 
 class CentralWidget(pyside2.QtWidgets.QWidget):
 

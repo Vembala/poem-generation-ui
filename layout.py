@@ -1,6 +1,6 @@
 """layout"""
 
-import pyside2
+import PySide2 as pyside2
 
 class VerticalBox(pyside2.QtWidgets.QVBoxLayout):
 
