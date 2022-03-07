@@ -21,6 +21,7 @@ MAXLEN = 80
 MAXTOKENS = 6
 MODEL_PATH = "model"
 CUSTOM_OBJECT = "TokenAndPositionEmbedding"
+K = 20000
 
 with open(VOCAB_PATH, READ_BYTE_MODE) as file:
     vocab = pickle.load(file)
@@ -28,7 +29,7 @@ with open(VOCAB_PATH, READ_BYTE_MODE) as file:
 model = tf.keras.models.load_model(MODEL_PATH, custom_objects={CUSTOM_OBJECT: TokenAndPositionEmbedding})
 
 output_label = OutputLabel()
-text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, model)
+text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, model, K)
 text_box = TextBox(text_generator)
 vertical_box = VerticalBox(text_box, output_label,)
 central_widget = CentralWidget(vertical_box,)
