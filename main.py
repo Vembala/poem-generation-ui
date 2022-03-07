@@ -28,7 +28,7 @@ with open(VOCAB_PATH, READ_BYTE_MODE) as file:
 model = tf.keras.models.load_model(MODEL_PATH, custom_objects={CUSTOM_OBJECT: TokenAndPositionEmbedding})
 
 output_label = OutputLabel()
-text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, MODEL_PATH)
+text_generator = TextGenerator(output_label, vocab, LINES, MAXLEN, MAXTOKENS, model)
 text_box = TextBox(text_generator)
 vertical_box = VerticalBox(text_box, output_label,)
 central_widget = CentralWidget(vertical_box,)
