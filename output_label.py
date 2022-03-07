@@ -11,3 +11,5 @@ class OutputLabel(QtWidgets.QLabel):
         """__init__"""
 
         super().__init__()
+
+        self.setStyleSheet("background-color: white")

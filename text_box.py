@@ -6,10 +6,9 @@ class TextBox(QtWidgets.QTextEdit):
 
     """TextBox"""
 
-    def __init__(self, text_generator):
+    def __init__(self,):
 
         """__init__"""
 
         super().__init__()
 
-        self.textChanged.connect(text_generator.run(self.toPlainText()))

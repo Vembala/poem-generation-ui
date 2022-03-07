@@ -8,18 +8,20 @@ class TextGenerator(QtWidgets.QWidget):
 
     """TextGenerator"""
 
-    def __init__(self, output_label: QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model, k):
+    def __init__(self, text_box, output_label: QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model, k):
 
         """__init__"""
 
         super().__init__()
 
+        self.text_box = text_box
         self.lines = lines
         self.maxlen = maxlen
         self.max_tokens = max_tokens
         self.model = model
         self.output_label = output_label
         self.k = k
+        self.vocab = vocab
         self.word_to_index = {}
         for index, word in enumerate(vocab):
             self.word_to_index[word] = index
@@ -34,9 +36,11 @@ class TextGenerator(QtWidgets.QWidget):
     def detokenize(self, number):
         return self.vocab[number]
 
-    def run(self, start_prompt,):
+    def run(self,):
 
         """run"""
+
+        start_prompt = self.text_box.toPlainText()
 
         texts = []
         for _ in range(self.lines):
@@ -59,9 +63,10 @@ class TextGenerator(QtWidgets.QWidget):
                 sample_token = self.sample_from(y[0][sample_index])
                 tokens_generated.append(sample_token)
                 start_tokens_.append(sample_token)
-            num_tokens_generated = len(tokens_generated)
+                num_tokens_generated = len(tokens_generated)
             txt = " ".join([self.detokenize(_) for _ in start_tokens + tokens_generated])
-            texts.append(txt)
+            #texts.append(txt)
+            texts.append(" ".join(txt.split()[1:]))
             start_prompt = " ".join(txt.split()[-1:])
-        plain_text = " ".join(texts)
+        plain_text = "\n".join(texts)
         self.output_label.setText(plain_text)
