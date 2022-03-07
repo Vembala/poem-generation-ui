@@ -1,8 +1,8 @@
 """text_box"""
 
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 
-class TextBox(pyside2.QtWidgets.QTextEdit):
+class TextBox(QtWidgets.QTextEdit):
 
     """TextBox"""
 
