@@ -1,12 +1,12 @@
 """main_window"""
 
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 
-class MainWindow(pyside2.QtWidgets.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
 
     """MainWindow"""
 
-    def __init__(self, central_widget: pyside2.QtWidgets.QWidget,):
+    def __init__(self, central_widget: QtWidgets.QWidget,):
 
         """__init__"""
 

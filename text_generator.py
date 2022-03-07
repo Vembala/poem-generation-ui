@@ -1,14 +1,14 @@
 """text_generator"""
 
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 import numpy as np
 import tensorflow as tf
 
-class TextGenerator(pyside2.QtWidgets.QWidget):
+class TextGenerator(QtWidgets.QWidget):
 
     """TextGenerator"""
 
-    def __init__(self, output_label: pyside2.QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
+    def __init__(self, output_label: QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
 
         """__init__"""
 

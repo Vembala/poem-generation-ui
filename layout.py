@@ -1,12 +1,12 @@
 """layout"""
 
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 
-class VerticalBox(pyside2.QtWidgets.QVBoxLayout):
+class VerticalBox(QtWidgets.QVBoxLayout):
 
     """VertivalBox"""
 
-    def __init__(self, text_box: pyside2.QtWidgets.QWidget, output_label: pyside2.QtWidgets.QWidget,):
+    def __init__(self, text_box: QtWidgets.QWidget, output_label: QtWidgets.QWidget,):
 
         """__init__"""
 

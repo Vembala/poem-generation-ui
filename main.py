@@ -8,11 +8,11 @@ from layout import VerticalBox
 from central_widget import CentralWidget
 from text_generator import TextGenerator
 from main_window import MainWindow
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 import sys
 from custom_object import TokenAndPositionEmbedding
 
-app = pyside2.QtWidgets.QApplication([])
+app = QtWidgets.QApplication([])
 
 VOCAB_PATH = "vocab.pkl"
 READ_BYTE_MODE = "rb"

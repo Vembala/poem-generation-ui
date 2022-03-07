@@ -1,12 +1,12 @@
 """central_widget"""
 
-import PySide2 as pyside2
+from PySide2 import QtWidgets
 
-class CentralWidget(pyside2.QtWidgets.QWidget):
+class CentralWidget(QtWidgets.QWidget):
 
     """CentralWidget"""
 
-    def __init__(self, layout: pyside2.QtWidgets.QLayout):
+    def __init__(self, layout: QtWidgets.QLayout):
 
         """__init__"""
 
