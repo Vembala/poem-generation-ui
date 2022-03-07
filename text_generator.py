@@ -8,7 +8,7 @@ class TextGenerator(pyside2.QtWidgets.QWidget):
 
     """TextGenerator"""
 
-    def __init__(self, text_box: pyside2.QtWidgets.QWidget, output_label: pyside2.QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
+    def __init__(self, output_label: pyside2.QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
 
         """__init__"""
 
