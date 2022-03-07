@@ -12,4 +12,4 @@ class TextBox(QtWidgets.QTextEdit):
 
         super().__init__()
 
-        self.toPlainText.connect(text_generator.run)
+        self.textChanged.connect(text_generator.run(self.toPlainText))
