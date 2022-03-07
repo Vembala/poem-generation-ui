@@ -8,7 +8,7 @@ class TextGenerator(pyside2.QtWidgets.QWidget):
 
     """TextGenerator"""
 
-    def __init__(self, text_box: pyside2.QtWidgets.QWidget, vocab, lines, maxlen, max_tokens, model):
+    def __init__(self, text_box: pyside2.QtWidgets.QWidget, output_label: pyside2.QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
 
         """__init__"""
 
@@ -17,6 +17,7 @@ class TextGenerator(pyside2.QtWidgets.QWidget):
         self.maxlen = maxlen
         self.max_tokens = max_tokens
         self.model = model
+        self.output_label = output_label
         self.word_to_index = {}
         for index, word in enumerate(vocab):
             self.word_to_index[word] = index
@@ -61,4 +62,4 @@ class TextGenerator(pyside2.QtWidgets.QWidget):
             texts.append(txt)
             start_prompt = " ".join(txt.split()[-1:])
         plain_text = " ".join(texts)
-        self.text_box.setText(plain_text)
+        self.output_label.setText(plain_text)
