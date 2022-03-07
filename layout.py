@@ -10,5 +10,7 @@ class VerticalBox(QtWidgets.QVBoxLayout):
 
         """__init__"""
 
+        super().__init__()
+
         self.addWidget(text_box,)
         self.addWidget(output_label,)

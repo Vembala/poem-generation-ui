@@ -10,4 +10,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
         """__init__"""
 
+        super().__init__()
+
         self.setCentralWidget(central_widget)

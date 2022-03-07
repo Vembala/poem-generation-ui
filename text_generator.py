@@ -12,6 +12,8 @@ class TextGenerator(QtWidgets.QWidget):
 
         """__init__"""
 
+        super().__init__()
+
         self.lines = lines
         self.maxlen = maxlen
         self.max_tokens = max_tokens
