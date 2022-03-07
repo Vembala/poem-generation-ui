@@ -8,7 +8,7 @@ class TextGenerator(QtWidgets.QWidget):
 
     """TextGenerator"""
 
-    def __init__(self, output_label: QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model):
+    def __init__(self, output_label: QtWidgets.QLabel, vocab, lines, maxlen, max_tokens, model, k):
 
         """__init__"""
 
@@ -19,12 +19,13 @@ class TextGenerator(QtWidgets.QWidget):
         self.max_tokens = max_tokens
         self.model = model
         self.output_label = output_label
+        self.k = k
         self.word_to_index = {}
         for index, word in enumerate(vocab):
             self.word_to_index[word] = index
 
     def sample_from(self, logits):
-        logits, indices = tf.math.top_k(logits, k=k, sorted=True)
+        logits, indices = tf.math.top_k(logits, k=self.k, sorted=True)
         indices = np.asarray(indices).astype("int32")
         preds = tf.keras.activations.softmax(tf.expand_dims(logits, 0))[0]
         preds = np.asarray(preds).astype("float32")
